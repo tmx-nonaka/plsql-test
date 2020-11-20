@@ -1,0 +1,14 @@
+CREATE OR REPLACE PROCEDURE PROC_SCOPE_TEST
+IS
+  n number;
+BEGIN
+  n:=1;
+  DECLARE
+    n number;
+  BEGIN
+    n:=2;
+    DBMS_OUTPUT.PUT_LINE('INNER n= '|| n);
+  END;
+  DBMS_OUTPUT.PUT_LINE('OUTER n= '|| n);
+END PROC_SCOPE_TEST;
+/
